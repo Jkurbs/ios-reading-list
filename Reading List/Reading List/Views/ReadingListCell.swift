@@ -12,7 +12,6 @@ class ReadingListCell: UITableViewCell {
     
     var delegate: BookTableViewCellDelegate?
 
-
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var readButton: UIButton!
     
@@ -25,17 +24,15 @@ class ReadingListCell: UITableViewCell {
     
 
     @IBAction func toogleReadButton(_ sender: UIButton) {
-        print("TAPPED")
         
         sender.isSelected = !sender.isSelected
         
-        
         if sender.isSelected {
             sender.setImage(UIImage(named: "checked"), for: .selected)
+            delegate?.toggleHasBeenRead(for: self)
         } else {
             sender.setImage(UIImage(named: "unchecked"), for: .normal)
         }
-        delegate?.toggleHasBeenRead(for: self)
     }
     
     

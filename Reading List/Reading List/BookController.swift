@@ -55,10 +55,14 @@ class BookController {
     
     
     func updateHasBeenRead(for book: Book) {
-        var book = books.filter({$0.title == book.title}).first
-        book?.hasBeenRead = true
+        if let index = books.index(where: {$0.title == book.title}) {
+            print(index)
+            books[index].hasBeenRead = true
+        }
         self.saveToPersistentStore()
     }
+    
+    
     
     func updateBookDetails(title: String, reasonToRead: String) {
         

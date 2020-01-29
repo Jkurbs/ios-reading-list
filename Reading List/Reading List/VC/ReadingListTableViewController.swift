@@ -90,7 +90,9 @@ extension ReadingListTableViewController {
 extension ReadingListTableViewController: BookTableViewCellDelegate {
     
     func toggleHasBeenRead(for cell: ReadingListCell) {
-        if let book = cell.book {
+        
+        if let indexPath = tableView.indexPath(for: cell) {
+            let book = bookFor(indexPath: indexPath)
             bookController.updateHasBeenRead(for: book)
             self.tableView.reloadData()
         }
