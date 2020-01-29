@@ -39,7 +39,7 @@ class ReadingListCell: UITableViewCell {
     func updateViews() {
         if let book = self.book {
             self.titleLabel.text = book.title
-            _ = book.hasBeenRead ? readButton.setImage(UIImage(named: "checked"), for: .selected) :  readButton.setImage(UIImage(named: "unchecked"), for: .normal)
+            _ = book.hasBeenRead ? readButton.setImage(UIImage(named: "checked"), for: .normal) :  readButton.setImage(UIImage(named: "unchecked"), for: .normal)
         }
     }
 }

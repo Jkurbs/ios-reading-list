@@ -34,7 +34,7 @@ class BookDetailViewController: UIViewController {
         if self.book == nil {
             bookController?.create(title: title, reasonToRead: reason, hasBeenRead: false)
         } else {
-            bookController?.updateBookDetails(title: title, reasonToRead: reason)
+            bookController?.updateBookDetails(for: book!, newTitle: title, newReason: reason)
         }
         
         self.navigationController?.popToRootViewController(animated: true)

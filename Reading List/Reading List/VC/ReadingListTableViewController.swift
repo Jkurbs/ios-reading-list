@@ -16,7 +16,7 @@ class ReadingListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        bookController.tableView = self.tableView
     }
     
     
@@ -94,7 +94,6 @@ extension ReadingListTableViewController: BookTableViewCellDelegate {
         if let indexPath = tableView.indexPath(for: cell) {
             let book = bookFor(indexPath: indexPath)
             bookController.updateHasBeenRead(for: book)
-            self.tableView.reloadData()
         }
     }
 }

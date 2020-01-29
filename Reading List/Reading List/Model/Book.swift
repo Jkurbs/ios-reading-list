@@ -26,7 +26,7 @@ struct Book: Codable {
 extension Book: Equatable {
     
     static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.title != rhs.title
+        return lhs.title >= rhs.title
     }
     
 }
